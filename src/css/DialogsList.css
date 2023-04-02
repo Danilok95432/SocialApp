@@ -1,0 +1,57 @@
+a{
+    text-decoration: none;
+}
+
+.messages{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+}
+
+.item-message{
+    width: 100%;
+    border-top: 1px solid #383838;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.item-message:hover{
+    background-color: #383838;
+}
+
+.avatar-main{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #f0f1e4;
+}
+
+.description{
+    width: 70%;
+    height: 71px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.name-sender{
+    font-size: 24px;
+    color: white;
+}
+
+.content-message{
+    font-size: 18px;
+    font-weight: 600;
+    color: gray;
+}
+
+.time-message{
+    font-size: 18px;
+    color: gray;
+}

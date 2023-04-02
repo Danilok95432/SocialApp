@@ -1,0 +1,88 @@
+.profile{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .logo-block-content{
+    width: 95%;
+    margin: 0 auto;
+    height: 400px;
+    background-color: #222222;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 0;
+  }
+  
+  .main-content-block{
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
+  
+  .main-column-content{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .photos-block{
+    height: 400px;
+    background-color: #222222;
+    border-radius: 15px;
+  }
+  
+  .additional-column-content{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .aboutUser-block{
+    height: 100px;
+    background-color: #222222;
+    border-radius: 15px;
+  }
+  
+  .friends-block{
+    height: 350px;
+    background-color: #222222;
+    border-radius: 15px;
+  }
+  
+  .cover-logo-content{
+    height: 70%;
+    background-color: #5a3725;
+    border-radius: 15px;
+  }
+  
+  .info-logo-conent{
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    height: 30%;
+    background-color: #222222;
+    border-radius: 15px;
+    z-index: 2;
+  }
+  
+  .circle-photo{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: #f0f1e4;
+    left: 40px;
+    bottom: 40px;
+    z-index: 3;
+  }
+  
+  .hint{
+    color: white;
+  }

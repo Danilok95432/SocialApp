@@ -1,0 +1,158 @@
+.users{
+    width: 80%;
+    margin: auto;
+    min-height: 200px;
+    background-color: #222222;
+    border-radius: 15px;
+}
+
+.header-users{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #383838;
+}
+
+.vector-search{
+    width: 35px;
+    height: 35px;
+    background-image: url("data:image/svg+xml,%3Csvg height='24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M0 0h24v24H0z'/%3E%3Cpath d='M16.76023 14.65292l2.89644 2.64982c.39061.35735.40734.94696.03329 1.32101l-.06627.06627c-.37223.37222-.96593.35483-1.321-.0333l-2.64978-2.89648C14.6412 16.53776 13.37458 17 12 17c-3.3137 0-6-2.6863-6-6s2.6863-6 6-6 6 2.6863 6 6c0 1.3746-.46224 2.64122-1.23977 3.65292zM12 15c2.20914 0 4-1.79086 4-4s-1.79086-4-4-4-4 1.79086-4 4 1.79086 4 4 4z' fill='%23828282'/%3E%3C/g%3E%3C/svg%3E");
+    background-position: center;
+    background-repeat: no-repeat;
+    scale: 1.5;
+}
+
+#search-users{
+    width: 80%;
+    border: none;
+    padding: 5px 10px 5px 15px;
+    height: 48px;
+    background-color: #222222;
+    border-radius: 15px;
+    font-size: 24px;
+    margin-right: 20px;
+}
+
+
+/* <------------- USER ITEM -------------> */
+
+.user-item{
+    width: 90%;
+    border-bottom: 1px solid #383838;
+    margin: auto;
+    background-color: #222222;
+    border-radius: 15px;
+}
+
+.user-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding: 15px 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-avatar{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #f0f1e4;
+}
+
+.name-activity{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+}
+
+.name-user{
+    font-size: 24px;
+    color: white;
+    font-weight: 600;
+}
+
+.activity{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.btn-send-message{
+    border: none;
+    background-color: #383838;
+    border-radius: 15px;
+    padding: 10px 5px;
+}
+
+.btn-follow{
+    border: none;
+    background-color: #383838;
+    border-radius: 15px;
+    padding: 10px 5px;
+}
+
+.text-btn{
+    font-size: 20px;
+    color: #868686;
+}
+
+.btn-content{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.vector-send{
+    width: 30px;
+    height: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    scale: 1;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8' standalone='no'%3F%3E%3C!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --%3E%3Csvg xmlns:dc='http://purl.org/dc/elements/1.1/' xmlns:cc='http://creativecommons.org/ns%23' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns%23' xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' xmlns:sodipodi='http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd' xmlns:inkscape='http://www.inkscape.org/namespaces/inkscape' width='30' height='30' viewBox='0 0 30 30' version='1.1' id='svg822' inkscape:version='0.92.4 (f8dce91, 2019-08-02)' sodipodi:docname='send.svg'%3E%3Cdefs id='defs816' /%3E%3Csodipodi:namedview id='base' pagecolor='%23ffffff' bordercolor='%23666666' borderopacity='1.0' inkscape:pageopacity='0.0' inkscape:pageshadow='2' inkscape:zoom='17.833333' inkscape:cx='15' inkscape:cy='15' inkscape:document-units='px' inkscape:current-layer='layer1' showgrid='true' units='px' inkscape:window-width='1366' inkscape:window-height='713' inkscape:window-x='0' inkscape:window-y='0' inkscape:window-maximized='1' showguides='true' inkscape:guide-bbox='true'%3E%3Cinkscape:grid type='xygrid' id='grid816' /%3E%3Csodipodi:guide position='14,30' orientation='0,1' id='guide888' inkscape:locked='false' /%3E%3C/sodipodi:namedview%3E%3Cmetadata id='metadata819'%3E%3Crdf:RDF%3E%3Ccc:Work rdf:about=''%3E%3Cdc:format%3Eimage/svg+xml%3C/dc:format%3E%3Cdc:type rdf:resource='http://purl.org/dc/dcmitype/StillImage' /%3E%3Cdc:title%3E%3C/dc:title%3E%3C/cc:Work%3E%3C/rdf:RDF%3E%3C/metadata%3E%3Cg inkscape:label='Layer 1' inkscape:groupmode='layer' id='layer1' transform='translate(0,-289.0625)'%3E%3Cpath inkscape:connector-curvature='0' style='opacity:1;fill:%23898989;fill-opacity:1;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1' d='m 25.5,304.0625 c 0,-1.11962 -1,-1.5 -1,-1.5 l -20,-8 3.60352,8.56055 L 17.5,304.0625 8.10352,305.00195 4.5,313.5625 l 20,-8 c 0,0 1,-0.38038 1,-1.5 z' id='rect820' /%3E%3C/g%3E%3C/svg%3E");
+}
+
+.vector-follow{
+    width: 30px;
+    height: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    scale: 1;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --%3E%3Csvg fill='%23868686' width='30px' height='30px' viewBox='0 0 32 32' version='1.1' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.002 27.959c0-0.795 0.597-1.044 0.835-1.154l8.783-4.145c0.63-0.289 1.064-0.885 1.149-1.573s-0.193-1.37-0.733-1.803c-2.078-1.668-3.046-5.334-3.046-7.287v-4.997c0-2.090 3.638-4.995 7.004-4.995 3.396 0 6.997 2.861 6.997 4.995v4.998c0 1.924-0.8 5.604-2.945 7.292-0.547 0.43-0.831 1.115-0.749 1.807 0.082 0.692 0.518 1.291 1.151 1.582l2.997 1.422 0.494-1.996-2.657-1.243c2.771-2.18 3.708-6.463 3.708-8.864v-4.997c0-3.31-4.582-6.995-8.998-6.995s-9.004 3.686-9.004 6.995v4.997c0 2.184 0.997 6.602 3.793 8.846l-8.783 4.145s-1.998 0.89-1.998 1.999v3.001c0 1.105 0.895 1.999 1.998 1.999h21.997v-2l-21.996 0.001v-2.029zM30.998 25.996h-3v-3c0-0.552-0.448-1-1-1s-1 0.448-1 1v3h-3c-0.552 0-1 0.448-1 1s0.448 1 1 1h3v3c0 0.552 0.448 1 1 1s1-0.448 1-1v-3h3c0.552 0 1-0.448 1-1s-0.448-1-1-1z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+#btn-user{
+    transition: all 0.5s ease-in-out;
+}
+
+#btn-user:hover{
+    background-color: white;
+}
+
+#btn-user:hover .text-btn{
+    color: black;
+}
+
+#btn-user:hover .vector-send{
+    width: 30px;
+    height: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    scale: 1;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8' standalone='no'%3F%3E%3C!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --%3E%3Csvg xmlns:dc='http://purl.org/dc/elements/1.1/' xmlns:cc='http://creativecommons.org/ns%23' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns%23' xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' xmlns:sodipodi='http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd' xmlns:inkscape='http://www.inkscape.org/namespaces/inkscape' width='30' height='30' viewBox='0 0 30 30' version='1.1' id='svg822' inkscape:version='0.92.4 (f8dce91, 2019-08-02)' sodipodi:docname='send.svg'%3E%3Cdefs id='defs816' /%3E%3Csodipodi:namedview id='base' pagecolor='%23ffffff' bordercolor='%23666666' borderopacity='1.0' inkscape:pageopacity='0.0' inkscape:pageshadow='2' inkscape:zoom='17.833333' inkscape:cx='15' inkscape:cy='15' inkscape:document-units='px' inkscape:current-layer='layer1' showgrid='true' units='px' inkscape:window-width='1366' inkscape:window-height='713' inkscape:window-x='0' inkscape:window-y='0' inkscape:window-maximized='1' showguides='true' inkscape:guide-bbox='true'%3E%3Cinkscape:grid type='xygrid' id='grid816' /%3E%3Csodipodi:guide position='14,30' orientation='0,1' id='guide888' inkscape:locked='false' /%3E%3C/sodipodi:namedview%3E%3Cmetadata id='metadata819'%3E%3Crdf:RDF%3E%3Ccc:Work rdf:about=''%3E%3Cdc:format%3Eimage/svg+xml%3C/dc:format%3E%3Cdc:type rdf:resource='http://purl.org/dc/dcmitype/StillImage' /%3E%3Cdc:title%3E%3C/dc:title%3E%3C/cc:Work%3E%3C/rdf:RDF%3E%3C/metadata%3E%3Cg inkscape:label='Layer 1' inkscape:groupmode='layer' id='layer1' transform='translate(0,-289.0625)'%3E%3Cpath inkscape:connector-curvature='0' style='opacity:1;fill:%23000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1' d='m 25.5,304.0625 c 0,-1.11962 -1,-1.5 -1,-1.5 l -20,-8 3.60352,8.56055 L 17.5,304.0625 8.10352,305.00195 4.5,313.5625 l 20,-8 c 0,0 1,-0.38038 1,-1.5 z' id='rect820' /%3E%3C/g%3E%3C/svg%3E");
+}
+#btn-user:hover .vector-follow{
+    width: 30px;
+    height: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    scale: 1;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --%3E%3Csvg fill='%23000000' width='30px' height='30px' viewBox='0 0 32 32' version='1.1' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.002 27.959c0-0.795 0.597-1.044 0.835-1.154l8.783-4.145c0.63-0.289 1.064-0.885 1.149-1.573s-0.193-1.37-0.733-1.803c-2.078-1.668-3.046-5.334-3.046-7.287v-4.997c0-2.090 3.638-4.995 7.004-4.995 3.396 0 6.997 2.861 6.997 4.995v4.998c0 1.924-0.8 5.604-2.945 7.292-0.547 0.43-0.831 1.115-0.749 1.807 0.082 0.692 0.518 1.291 1.151 1.582l2.997 1.422 0.494-1.996-2.657-1.243c2.771-2.18 3.708-6.463 3.708-8.864v-4.997c0-3.31-4.582-6.995-8.998-6.995s-9.004 3.686-9.004 6.995v4.997c0 2.184 0.997 6.602 3.793 8.846l-8.783 4.145s-1.998 0.89-1.998 1.999v3.001c0 1.105 0.895 1.999 1.998 1.999h21.997v-2l-21.996 0.001v-2.029zM30.998 25.996h-3v-3c0-0.552-0.448-1-1-1s-1 0.448-1 1v3h-3c-0.552 0-1 0.448-1 1s0.448 1 1 1h3v3c0 0.552 0.448 1 1 1s1-0.448 1-1v-3h3c0.552 0 1-0.448 1-1s-0.448-1-1-1z'%3E%3C/path%3E%3C/svg%3E");
+}
