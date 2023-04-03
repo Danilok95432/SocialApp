@@ -1,14 +1,20 @@
-
 const OPEN_USER_PAGE = 'OPEN-USER-PAGE',
       FOLLOW_USER = 'FOLLOW-USER',
       START_CHAT = 'START-CHAT',
-      SET_USERS = 'SET-USERS'
+      SET_USERS = 'SET-USERS',
+      UPDATE_USERS = 'UPDATE-USERS',
+      IS_FETCHING = 'IS-FETCHING',
+      UPDATE_STATUS = 'UPDATE-STATUS'
 
 let initialState = {
-    usersList: [
-        
-    ]
+    usersList: [],
+    isFetching: false,
+    pageSize: 4,
+    currentPage: 1,
+    update: true
 }
+
+export let sizePage = initialState.pageSize;
 
 const usersReducer = (state = initialState, action) =>{
     switch(action.type){
@@ -18,9 +24,10 @@ const usersReducer = (state = initialState, action) =>{
             return state;
         }
         case FOLLOW_USER: {
+            debugger
             let index = action.id;
             let flag = action.followStatus;
-            let elem = state.usersList.find(x => x.id === index);
+            let elem = action.users.find(x => x.id === index);
             if(flag === true){
                 elem.followStatus = false;
             }
@@ -42,6 +49,33 @@ const usersReducer = (state = initialState, action) =>{
                 usersList: [...state.usersList, ...action.users]
             }
         }
+        case UPDATE_USERS:{
+            return{
+                ...state,
+                currentPage: action.page
+            }
+        }
+        case IS_FETCHING: {
+            let flag = false;
+            if(!action.fetchStatus){
+                flag = true
+            }
+            return{
+                ...state,
+                isFetching: flag
+            }
+        }
+        case UPDATE_STATUS: {
+            
+            let flag = true;
+            if(action.update){
+                flag = false;
+            }
+            return{
+                ...state,
+                update: flag
+            }
+        }
         default:
             return state;
     }
@@ -54,11 +88,12 @@ export let openUserPageActionCreator = (index) =>{
     }
 }
 
-export let followActionCreator = (index, followStatus) =>{
+export let followActionCreator = (index, followStatus, users) =>{
     return{
         type: FOLLOW_USER,
         id: index,
-        followStatus: followStatus
+        followStatus: followStatus,
+        users: users
     }
 }
 
@@ -74,6 +109,27 @@ export let setUsersActionCreator = (users) =>{
     return{
         type: SET_USERS,
         users: users
+    }
+}
+
+export let updateUsersActionCreator = (page) =>{
+    return{
+        type: UPDATE_USERS,
+        page: page
+    }
+}
+
+export let isFetchingActionCreator = (fetchStatus) =>{
+    return{
+        type: IS_FETCHING,
+        fetchStatus: fetchStatus
+    }
+}
+
+export let updateStatusChangedActionCreator = (update) =>{
+    return{
+        type: UPDATE_STATUS,
+        update: update
     }
 }
 

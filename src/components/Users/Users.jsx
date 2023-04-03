@@ -1,33 +1,52 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import '../../css/Users.css'
 
 
 import axios from "axios";
+import Preloader from "../Common/Preloader";
 
+const Users = (props) =>{
 
-class Users extends React.Component{
+    const [users,setUsers] = useState([]);
+    const [pageCount,setPageCount] = useState(1);
+    const [itemOffset,setItemOffset] = useState(0);
+    
 
-    componentDidMount(){
-        axios.get('/api/users')
-             .then(response => {
-                this.props.setUsers(response.data)
-             })
+    useEffect( () =>{
+        axios.get(`/api/users/${props.currentPage}`)
+            .then(response => {
+                setUsers(response.data.users)
+                setPageCount(response.data.pageCount)
+            })
+    })
+
+    console.log(props.update)
+    let totalPages = pageCount
+    let pages = []
+
+    for(let i = 1; i <= totalPages; i++){
+        pages.push(i);
     }
 
-    render(){
-        return(
+    return(
+        <>
         <div className="users">
             <div className="header-users">
                 <div className="vector-search"></div>
                 <input type="text" id="search-users" placeholder="Search"/>
             </div>
+            <div>
+                {
+                    false ? <Preloader /> : null
+                }
+            </div>
             <div className="users-list">
                 {
-                    this.props.users.map( user =>(
-                        <div className="user-item">
+                    users.map( user =>(
+                        <div className="user-item" key={user.id}>
                             <div className="user-container">
                                 <div className="user-avatar">
-                                    <img src='' alt="" />
+                                    <img className="photo-small" src={user.photoUrl.small.source} alt="" />
                                 </div>
                                 <div className="name-activity" >
                                     <div className="name-user" >{user.name}</div>
@@ -38,7 +57,7 @@ class Users extends React.Component{
                                                 <div className="vector-send"></div>
                                             </div>
                                         </button>
-                                        <button className="btn-follow" id="btn-user" onClick={() =>{ this.props.followUser(props.id, props.followStatus)}}>
+                                        <button className="btn-follow" id="btn-user" onClick={() =>{props.followUser(user.id, user.followStatus, users)}}>
                                             <div className="btn-content">
                                                 {
                                                 user.followStatus
@@ -55,8 +74,23 @@ class Users extends React.Component{
                 }
             </div>
         </div>
-        )
-    }
+        <div className="pagination">
+            {
+                pages.map( page => {
+                    let name = ''
+                    if(props.currentPage === page) name = 'selected'
+                    return <span className={name} key={page} onClick={ () => {
+                        const newOffset = (page * props.pageSize) - props.pageSize; 
+                        setItemOffset(newOffset)
+                        console.log(newOffset)
+                        props.updateUsers(page)
+                        props.updateStatusChanged(false)
+                    }}>{page}</span>
+                })
+            }
+        </div>
+        </>
+    )
 }
 
 

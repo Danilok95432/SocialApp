@@ -1,42 +1,104 @@
 import express from 'express';
-
+import { sizePage } from '../redux/usersReducer.js';
 const app = express();
 
+const users = [
+    {
+    id: 1,
+    name: 'John Doe',
+    photoUrl: {
+        small: {source: 'https://w7.pngwing.com/pngs/758/485/png-transparent-computer-icons-male-woman-organization-flat-people-miscellaneous-face-cartoon.png', widthPhoto: 80, heightPhoto:80},
+        big: {source: 'https://w7.pngwing.com/pngs/758/485/png-transparent-computer-icons-male-woman-organization-flat-people-miscellaneous-face-cartoon.png', widthPhoto: 80, heightPhoto:80}
+    },
+    followStatus: true
+    },
+    {
+    id: 2,
+    name: 'Joe Doe',
+    photoUrl: {
+        small: {source: 'https://www.kindpng.com/picc/m/780-7804962_cartoon-avatar-png-image-transparent-avatar-user-image.png', widthPhoto: 80, heightPhoto:80},
+        big: {source: 'https://www.kindpng.com/picc/m/780-7804962_cartoon-avatar-png-image-transparent-avatar-user-image.png', widthPhoto: 80, heightPhoto:80}
+    },
+    followStatus: false
+    },
+    {
+    id: 3,
+    name: 'Nikita',
+    photoUrl: {
+        small: {source: 'https://www.clipartmax.com/png/middle/34-347774_avatar-juergen59-avatar.png', widthPhoto: 80, heightPhoto:80},
+        big: {source: 'https://www.clipartmax.com/png/middle/34-347774_avatar-juergen59-avatar.png', widthPhoto: 80, heightPhoto:80}
+    },
+    followStatus: true
+    },
+    {
+    id: 4,
+    name: 'Dima',
+    photoUrl: {
+        small: {source: 'https://w7.pngwing.com/pngs/758/485/png-transparent-computer-icons-male-woman-organization-flat-people-miscellaneous-face-cartoon.png', widthPhoto: 80, heightPhoto:80},
+        big: {source: 'https://w7.pngwing.com/pngs/758/485/png-transparent-computer-icons-male-woman-organization-flat-people-miscellaneous-face-cartoon.png', widthPhoto: 80, heightPhoto:80}
+    },
+    followStatus: true
+    },
+    {
+    id: 5,
+    name: 'Katya',
+    photoUrl: {
+        small: {source: 'https://www.kindpng.com/picc/m/780-7804962_cartoon-avatar-png-image-transparent-avatar-user-image.png', widthPhoto: 80, heightPhoto:80},
+        big: {source: 'https://www.kindpng.com/picc/m/780-7804962_cartoon-avatar-png-image-transparent-avatar-user-image.png', widthPhoto: 80, heightPhoto:80}
+    },
+    followStatus: false
+    },
+    {
+    id: 6,
+    name: 'Danila',
+    photoUrl: {
+        small: {source: 'https://www.clipartmax.com/png/middle/34-347774_avatar-juergen59-avatar.png', widthPhoto: 80, heightPhoto:80},
+        big: {source: 'https://www.clipartmax.com/png/middle/34-347774_avatar-juergen59-avatar.png', widthPhoto: 80, heightPhoto:80}
+    },
+    followStatus: true
+    },
+    {
+    id: 7,
+    name: 'Ilya',
+    photoUrl: {
+        small: {source: 'https://w7.pngwing.com/pngs/758/485/png-transparent-computer-icons-male-woman-organization-flat-people-miscellaneous-face-cartoon.png', widthPhoto: 80, heightPhoto:80},
+        big: {source: 'https://w7.pngwing.com/pngs/758/485/png-transparent-computer-icons-male-woman-organization-flat-people-miscellaneous-face-cartoon.png', widthPhoto: 80, heightPhoto:80}
+    },
+    followStatus: true
+    },
+    {
+    id: 8,
+    name: 'Vitalik',
+    photoUrl: {
+        small: {source: 'https://www.kindpng.com/picc/m/780-7804962_cartoon-avatar-png-image-transparent-avatar-user-image.png', widthPhoto: 80, heightPhoto:80},
+        big: {source: 'https://www.kindpng.com/picc/m/780-7804962_cartoon-avatar-png-image-transparent-avatar-user-image.png', widthPhoto: 80, heightPhoto:80}
+    },
+    followStatus: false
+    },
+    {
+    id: 9,
+    name: 'Vitya',
+    photoUrl: {
+        small: {source: 'https://www.clipartmax.com/png/middle/34-347774_avatar-juergen59-avatar.png', widthPhoto: 80, heightPhoto:80},
+        big: {source: 'https://www.clipartmax.com/png/middle/34-347774_avatar-juergen59-avatar.png', widthPhoto: 80, heightPhoto:80}
+    },
+    followStatus: true
+    }
+]
 
 app.get('/' , (req, res) =>{
     //serve react app
 })
 
-app.get('/api/users', (req, res) =>{
-    res.send([{
-        id: '',
-        name: 'John Doe',
-        photoUrl: [{
-            small: [{source: 'https://w7.pngwing.com/pngs/758/485/png-transparent-computer-icons-male-woman-organization-flat-people-miscellaneous-face-cartoon.png', widthPhoto: 80, heightPhoto:80}],
-            big: [{source: 'https://w7.pngwing.com/pngs/758/485/png-transparent-computer-icons-male-woman-organization-flat-people-miscellaneous-face-cartoon.png', widthPhoto: 80, heightPhoto:80}]
-        }],
-        followStatus: true
-    },
-    {
-        id: '',
-        name: 'Joe Doe',
-        photoUrl: [{
-            small: [{source: 'https://www.kindpng.com/picc/m/780-7804962_cartoon-avatar-png-image-transparent-avatar-user-image.png', widthPhoto: 80, heightPhoto:80}],
-            big: [{source: 'https://www.kindpng.com/picc/m/780-7804962_cartoon-avatar-png-image-transparent-avatar-user-image.png', widthPhoto: 80, heightPhoto:80}]
-        }],
-        followStatus: false
-    },
-    {
-        id: '',
-        name: 'Nikita',
-        photoUrl: [{
-            small: [{source: 'https://www.clipartmax.com/png/middle/34-347774_avatar-juergen59-avatar.png', widthPhoto: 80, heightPhoto:80}],
-            big: [{source: 'https://www.clipartmax.com/png/middle/34-347774_avatar-juergen59-avatar.png', widthPhoto: 80, heightPhoto:80}]
-        }],
-        followStatus: true
+app.get('/api/users/:page', (req, res) =>{
+    const {page} = req.params;
+    const pageCount = Math.ceil(users.length / sizePage);
+    res.json({
+        users : users.slice(page * sizePage - sizePage, page * sizePage),
+        pageCount : pageCount
     }
-])
-})
+    )   
+    })
 
 app.get('/api/dialogs', (req, res) =>{
     res.send([

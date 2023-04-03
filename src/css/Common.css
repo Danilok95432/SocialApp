@@ -1,0 +1,18 @@
+/* Here is everything that in folder common /*
+
+/* Preloader */
+
+.preloader{
+    width: 80%;
+    height: 800px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.load-active{
+    display: none;
+}
+
+/* <--------------------------> */
