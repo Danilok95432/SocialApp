@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import {useNavigate} from "react-router-dom"
 import '../../css/Users.css'
 
 
@@ -10,7 +11,7 @@ const Users = (props) =>{
     const [users,setUsers] = useState([]);
     const [pageCount,setPageCount] = useState(1);
     const [itemOffset,setItemOffset] = useState(0);
-    
+    const navigate = useNavigate();
 
     useEffect( () =>{
         axios.get(`/api/users/${props.currentPage}`)
@@ -18,9 +19,8 @@ const Users = (props) =>{
                 setUsers(response.data.users)
                 setPageCount(response.data.pageCount)
             })
-    })
+    },[props.currentPage])
 
-    console.log(props.update)
     let totalPages = pageCount
     let pages = []
 
@@ -46,10 +46,10 @@ const Users = (props) =>{
                         <div className="user-item" key={user.id}>
                             <div className="user-container">
                                 <div className="user-avatar">
-                                    <img className="photo-small" src={user.photoUrl.small.source} alt="" />
+                                    <img className="photo-small" src={user.photoUrl.small.source} alt="" onClick={ () => navigate('/profile/' + user.id)}/>
                                 </div>
                                 <div className="name-activity" >
-                                    <div className="name-user" >{user.name}</div>
+                                    <div className="name-user" onClick={ () => navigate('/profile/' + user.id)}>{user.name}</div>
                                     <div className="activity">
                                         <button className="btn-send-message" id="btn-user" >
                                             <div className="btn-content">
@@ -82,7 +82,6 @@ const Users = (props) =>{
                     return <span className={name} key={page} onClick={ () => {
                         const newOffset = (page * props.pageSize) - props.pageSize; 
                         setItemOffset(newOffset)
-                        console.log(newOffset)
                         props.updateUsers(page)
                         props.updateStatusChanged(false)
                     }}>{page}</span>

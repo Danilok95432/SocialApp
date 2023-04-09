@@ -83,6 +83,15 @@ const users = [
         big: {source: 'https://www.clipartmax.com/png/middle/34-347774_avatar-juergen59-avatar.png', widthPhoto: 80, heightPhoto:80}
     },
     followStatus: true
+    },
+    {
+        id: 10,
+        name: 'Vitya Morgan',
+        photoUrl: {
+            small: {source: 'https://www.clipartmax.com/png/middle/34-347774_avatar-juergen59-avatar.png', widthPhoto: 80, heightPhoto:80},
+            big: {source: 'https://www.clipartmax.com/png/middle/34-347774_avatar-juergen59-avatar.png', widthPhoto: 80, heightPhoto:80}
+        },
+        followStatus: true
     }
 ]
 
@@ -96,6 +105,15 @@ app.get('/api/users/:page', (req, res) =>{
     res.json({
         users : users.slice(page * sizePage - sizePage, page * sizePage),
         pageCount : pageCount
+    }
+    )   
+    })
+
+app.get('/api/profile/:userId', (req, res) =>{
+    const {userId} = req.params;
+    res.json({
+        profile: users[userId - 1],
+        userId: userId
     }
     )   
     })

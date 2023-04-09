@@ -4,6 +4,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom"
 import Header from './components/App/Header';
 import Sidebar from './components/App/Sidebar';
 import Profile from './components/Profile/Profile';
+import ProfileContainer from './components/Profile/ProfileContainer';
 import Dialogs from './components/Dialogs/Dialogs';
 import MessangerContainer from './components/Dialogs/Messanger/MessangerContainer';
 import UsersContainer from './components/Users/UsersContainer'
@@ -24,8 +25,10 @@ function App(props) {
             <Sidebar />
             <div className='main-content'>
               <Routes>
-                <Route path='/profile' component={Profile} 
+              <Route exact path='/profile' component={Profile} 
                 element={<Profile />} />
+                <Route path='/profile/:userId' component={ProfileContainer} 
+                element={<ProfileContainer />} />
                 <Route path='/dialogs' component={Dialogs} element={<Dialogs />}/>
                 <Route path='/dialogs/im/*' component={MessangerContainer} 
                 element={<MessangerContainer />} />
